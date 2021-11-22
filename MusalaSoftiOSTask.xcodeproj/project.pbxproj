@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		11D1BEA6274C127500BEF0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */; };
 		11D1BEA8274C127500BEF0C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */; };
-		11D1BEAA274C127500BEF0C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA9274C127500BEF0C7 /* ViewController.swift */; };
 		11D1BEAD274C127500BEF0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D1BEAB274C127500BEF0C7 /* Main.storyboard */; };
 		11D1BEB0274C127600BEF0C7 /* MusalaSoftiOSTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEAE274C127500BEF0C7 /* MusalaSoftiOSTask.xcdatamodeld */; };
 		11D1BEB2274C127900BEF0C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D1BEB1274C127900BEF0C7 /* Assets.xcassets */; };
 		11D1BEB5274C127900BEF0C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D1BEB3274C127900BEF0C7 /* LaunchScreen.storyboard */; };
+		11D1BEC0274C142F00BEF0C7 /* ListCitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEBF274C142F00BEF0C7 /* ListCitiesViewController.swift */; };
+		11D1BEC2274C14A300BEF0C7 /* DayWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEC1274C14A300BEF0C7 /* DayWeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusalaSoftiOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		11D1BEA9274C127500BEF0C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11D1BEAC274C127500BEF0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11D1BEAF274C127500BEF0C7 /* MusalaSoftiOSTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MusalaSoftiOSTask.xcdatamodel; sourceTree = "<group>"; };
 		11D1BEB1274C127900BEF0C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11D1BEB4274C127900BEF0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11D1BEB6274C127900BEF0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11D1BEBF274C142F00BEF0C7 /* ListCitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCitiesViewController.swift; sourceTree = "<group>"; };
+		11D1BEC1274C14A300BEF0C7 /* DayWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,89 @@
 		11D1BEA4274C127500BEF0C7 /* MusalaSoftiOSTask */ = {
 			isa = PBXGroup;
 			children = (
-				11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */,
-				11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */,
-				11D1BEA9274C127500BEF0C7 /* ViewController.swift */,
-				11D1BEAB274C127500BEF0C7 /* Main.storyboard */,
-				11D1BEB1274C127900BEF0C7 /* Assets.xcassets */,
-				11D1BEB3274C127900BEF0C7 /* LaunchScreen.storyboard */,
-				11D1BEB6274C127900BEF0C7 /* Info.plist */,
-				11D1BEAE274C127500BEF0C7 /* MusalaSoftiOSTask.xcdatamodeld */,
+				11D1BEC8274C500D00BEF0C7 /* Models */,
+				11D1BEC7274C4FE900BEF0C7 /* Resources */,
+				11D1BEC6274C4FC800BEF0C7 /* Supporting Files */,
+				11D1BEC5274C4FA100BEF0C7 /* Storyboards */,
+				11D1BEC4274C4E7C00BEF0C7 /* Application Delegate */,
+				11D1BEBC274C132400BEF0C7 /* ViewControllers */,
 			);
 			path = MusalaSoftiOSTask;
+			sourceTree = "<group>";
+		};
+		11D1BEBC274C132400BEF0C7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEC3274C154A00BEF0C7 /* ListDayWeather */,
+				11D1BEBE274C13BC00BEF0C7 /* DayWeather */,
+				11D1BEBD274C139E00BEF0C7 /* ListCities */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11D1BEBD274C139E00BEF0C7 /* ListCities */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEBF274C142F00BEF0C7 /* ListCitiesViewController.swift */,
+			);
+			path = ListCities;
+			sourceTree = "<group>";
+		};
+		11D1BEBE274C13BC00BEF0C7 /* DayWeather */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEC1274C14A300BEF0C7 /* DayWeatherViewController.swift */,
+			);
+			path = DayWeather;
+			sourceTree = "<group>";
+		};
+		11D1BEC3274C154A00BEF0C7 /* ListDayWeather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListDayWeather;
+			sourceTree = "<group>";
+		};
+		11D1BEC4274C4E7C00BEF0C7 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */,
+				11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		11D1BEC5274C4FA100BEF0C7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEAB274C127500BEF0C7 /* Main.storyboard */,
+				11D1BEB3274C127900BEF0C7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		11D1BEC6274C4FC800BEF0C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEB6274C127900BEF0C7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11D1BEC7274C4FE900BEF0C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEB1274C127900BEF0C7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11D1BEC8274C500D00BEF0C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEAE274C127500BEF0C7 /* MusalaSoftiOSTask.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D1BEAA274C127500BEF0C7 /* ViewController.swift in Sources */,
 				11D1BEA6274C127500BEF0C7 /* AppDelegate.swift in Sources */,
+				11D1BEC0274C142F00BEF0C7 /* ListCitiesViewController.swift in Sources */,
+				11D1BEC2274C14A300BEF0C7 /* DayWeatherViewController.swift in Sources */,
 				11D1BEA8274C127500BEF0C7 /* SceneDelegate.swift in Sources */,
 				11D1BEB0274C127600BEF0C7 /* MusalaSoftiOSTask.xcdatamodeld in Sources */,
 			);
@@ -295,7 +371,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZS8BG3AB6Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusalaSoftiOSTask/Info.plist;
+				INFOPLIST_FILE = "MusalaSoftiOSTask/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -323,7 +399,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZS8BG3AB6Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusalaSoftiOSTask/Info.plist;
+				INFOPLIST_FILE = "MusalaSoftiOSTask/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
