@@ -1,4 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ConsolidatedWeather" representedClassName="ConsolidatedWeather" syncable="YES">
+        <attribute name="airPressure" optional="YES"/>
+        <attribute name="applicableDate" optional="YES"/>
+        <attribute name="created" optional="YES" attributeType="String"/>
+        <attribute name="humidity" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="maxTemp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="minTemp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="predictability" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="visibility" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="weatherStateAbbr" optional="YES" attributeType="String"/>
+        <attribute name="weatherStateName" optional="YES" attributeType="String"/>
+        <attribute name="windDirection" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="windDirectionCompass" optional="YES" attributeType="String"/>
+        <attribute name="windSpeed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="lattLong" attributeType="String"/>
+        <attribute name="locationType" attributeType="String"/>
+        <attribute name="timeZone" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="woeid" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="consolidateWeather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ConsolidatedWeather"/>
+        <relationship name="sources" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sources"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="woeid"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Sources" representedClassName="Sources" syncable="YES">
+        <attribute name="crawlRate" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="slug" optional="YES" attributeType="String"/>
+        <attribute name="tittle" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Location" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Sources" positionX="-36" positionY="45" width="128" height="89"/>
+        <element name="ConsolidatedWeather" positionX="-9" positionY="54" width="128" height="254"/>
+    </elements>
 </model>
