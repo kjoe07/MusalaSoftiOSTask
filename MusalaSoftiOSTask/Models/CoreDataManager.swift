@@ -7,7 +7,11 @@
 
 import Foundation
 import CoreData
+import UIKit
 class CoreDataManager {
+    
+    let locations = ["Sofia","NY", "Tokyo" ]
+    let woid = [839722,2459115,1118370]
     
     init() {
         persistentContainer.loadPersistentStores { persistentStoreDescription, error in
@@ -15,6 +19,9 @@ class CoreDataManager {
                 print("Unable to Add Persistent Store")
                 print("\(error), \(error.localizedDescription)")
             } else {
+                if UserDefaults.standard.value(forKey: "isNotFirstLaunch") == nil {
+                    self.setInitialData()
+                }
             }
         }
     }
@@ -42,5 +49,22 @@ class CoreDataManager {
                 print("Unable to Execute Fetch Request, \(error)")
             }
         }
+    }
+    
+    func setInitialData() {
+        for i in 0..<locations.count {
+            let location = Location(context: persistentContainer.viewContext)
+            location.woeid = woid[i] as NSNumber
+            location.title = locations[i]
+            do {
+                try persistentContainer.viewContext.save()
+                UserDefaults.standard.set(true, forKey: "isNotFirstLaunch")
+                UserDefaults.standard.synchronize()
+            
+            } catch {
+                print("Unable to Save, \(error)")
+            }
+        }
+        
     }
 }

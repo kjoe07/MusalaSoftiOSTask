@@ -23,9 +23,9 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
-        <attribute name="lattLong" attributeType="String"/>
-        <attribute name="locationType" attributeType="String"/>
-        <attribute name="timeZone" attributeType="String"/>
+        <attribute name="lattLong" optional="YES" attributeType="String"/>
+        <attribute name="locationType" optional="YES" attributeType="String"/>
+        <attribute name="timeZone" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="woeid" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="consolidateWeather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ConsolidatedWeather"/>
@@ -43,8 +43,8 @@
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
+        <element name="ConsolidatedWeather" positionX="-9" positionY="54" width="128" height="254"/>
         <element name="Location" positionX="-63" positionY="-18" width="128" height="134"/>
         <element name="Sources" positionX="-36" positionY="45" width="128" height="89"/>
-        <element name="ConsolidatedWeather" positionX="-9" positionY="54" width="128" height="254"/>
     </elements>
 </model>
