@@ -9,4 +9,6 @@ import Foundation
 protocol ListCitiesViewRepresentable {
     var numberOfCities: Int { get }
     func viewModel(for index: Int) -> CitiesTableViewCellRepresentable
+    var dataUpdated: (() -> Void)? { get set }
+    
 }

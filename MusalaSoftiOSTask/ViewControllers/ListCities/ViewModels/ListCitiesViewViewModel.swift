@@ -6,16 +6,24 @@
 //
 
 import Foundation
-struct ListCitiesViewViewModel {
+class ListCitiesViewViewModel {
     
-    internal var cities: [Location] = []
-    
-    private var factory: CitiesViewModelFactory
-    
-    init(factory: CitiesViewModelFactory) {
-        self.factory = factory
+    internal var cities: [Location] = [] {
+        didSet{
+            dataUpdated?()
+        }
     }
     
+    var dataUpdated: (() -> Void)?
+    
+    private var factory: CitiesViewModelFactory
+    private var manager: CoreDataManager
+    
+    init(factory: CitiesViewModelFactory, manager: CoreDataManager) {
+        self.factory = factory
+        self.manager = manager
+        readData()
+    }
     
     var numberOfCities: Int {
         cities.count
@@ -23,6 +31,12 @@ struct ListCitiesViewViewModel {
     
     func viewModel(for index: Int) -> CitiesTableViewCellRepresentable{
         return factory.viewModel(for: cities[index])
+    }
+    
+    private func readData() {
+        self.manager.fetchLinks(completion: { [weak self] cities in
+            self?.cities = cities
+        })
     }
 }
 extension ListCitiesViewViewModel: ListCitiesViewRepresentable {}

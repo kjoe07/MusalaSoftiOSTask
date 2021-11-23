@@ -18,8 +18,13 @@ class ListCitiesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
-    }
-    
+        viewModel.dataUpdated = {[weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.tableView.reloadData()
+            }
+        }
+    }    
 
     
     // MARK: - Navigation

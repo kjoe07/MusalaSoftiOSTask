@@ -58,6 +58,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="48K-1B-6G5"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="S2O-cj-p68" id="1Ds-ZX-aqu"/>
                         <segue destination="Hbd-b8-YOy" kind="show" identifier="dayWeather" id="3YT-Bd-rv6"/>
                     </connections>
                 </viewController>
