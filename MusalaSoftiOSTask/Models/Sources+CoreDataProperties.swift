@@ -19,7 +19,7 @@ extension Sources {
     @NSManaged public var tittle: String?
     @NSManaged public var slug: String?
     @NSManaged public var url: String?
-    @NSManaged public var crawlRate: Int64
+    @NSManaged public var crawlRate: NSNumber?
 
 }
 

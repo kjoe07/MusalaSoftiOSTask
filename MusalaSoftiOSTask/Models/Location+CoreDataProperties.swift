@@ -18,7 +18,7 @@ extension Location {
 
     @NSManaged public var title: String?
     @NSManaged public var locationType: String?
-    @NSManaged public var woeid: Int64
+    @NSManaged public var woeid: NSNumber
     @NSManaged public var lattLong: String?
     @NSManaged public var timeZone: String?
     @NSManaged public var sources: NSSet?

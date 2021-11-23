@@ -11,10 +11,25 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let locations = ["Sofia","NY", "Tokyo" ]
+     let woid = [839722,2459115,1118370]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if !UserDefaults.standard.bool(forKey: "isNotFirstLaunch") {
+            for i in 0..<locations.count {
+                let location = Location(context: persistentContainer.viewContext)
+                location.woeid = woid[i] as NSNumber
+                location.title = locations[i]
+                
+                do {
+                    try persistentContainer.viewContext.save()
+                
+                } catch {
+                    print("Unable to Save, \(error)")
+                }
+            }
+        }
         return true
     }
 

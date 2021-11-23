@@ -21,7 +21,25 @@
 		11D1BEDE274C70E500BEF0C7 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BED8274C70E500BEF0C7 /* Location+CoreDataProperties.swift */; };
 		11D1BEDF274C70E500BEF0C7 /* Sources+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BED9274C70E500BEF0C7 /* Sources+CoreDataClass.swift */; };
 		11D1BEE0274C70E500BEF0C7 /* Sources+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEDA274C70E500BEF0C7 /* Sources+CoreDataProperties.swift */; };
+		11D1BEF3274C8B4F00BEF0C7 /* AppDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEF2274C8B4F00BEF0C7 /* AppDelegateTest.swift */; };
+		11D1BEF8274C977200BEF0C7 /* ListCitiesViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEF7274C977200BEF0C7 /* ListCitiesViewViewModel.swift */; };
+		11E7EAC0274D4E51006381F8 /* CitiesTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7EABF274D4E51006381F8 /* CitiesTableViewCellViewModel.swift */; };
+		11E7EAC2274D4ECB006381F8 /* CitiesTableViewCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7EAC1274D4ECB006381F8 /* CitiesTableViewCellRepresentable.swift */; };
+		11E7EAC4274D4F0E006381F8 /* ListCitiesViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7EAC3274D4F0E006381F8 /* ListCitiesViewRepresentable.swift */; };
+		11E7EAC7274D4FE9006381F8 /* CitiesViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7EAC6274D4FE9006381F8 /* CitiesViewModelFactory.swift */; };
+		11E7EAC9274D5AF4006381F8 /* CitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7EAC8274D5AF4006381F8 /* CitiesTableViewCell.swift */; };
+		11E7EACB274D6756006381F8 /* ListDayweatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E7EACA274D6756006381F8 /* ListDayweatherViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11D1BEE9274C8A8B00BEF0C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11D1BE9A274C127500BEF0C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11D1BEA1274C127500BEF0C7;
+			remoteInfo = MusalaSoftiOSTask;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusalaSoftiOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,10 +58,26 @@
 		11D1BED8274C70E500BEF0C7 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		11D1BED9274C70E500BEF0C7 /* Sources+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources+CoreDataClass.swift"; sourceTree = "<group>"; };
 		11D1BEDA274C70E500BEF0C7 /* Sources+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		11D1BEE5274C8A8B00BEF0C7 /* MusalaSoftiOSTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusalaSoftiOSTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11D1BEF2274C8B4F00BEF0C7 /* AppDelegateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTest.swift; sourceTree = "<group>"; };
+		11D1BEF7274C977200BEF0C7 /* ListCitiesViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCitiesViewViewModel.swift; sourceTree = "<group>"; };
+		11E7EABF274D4E51006381F8 /* CitiesTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		11E7EAC1274D4ECB006381F8 /* CitiesTableViewCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCellRepresentable.swift; sourceTree = "<group>"; };
+		11E7EAC3274D4F0E006381F8 /* ListCitiesViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCitiesViewRepresentable.swift; sourceTree = "<group>"; };
+		11E7EAC6274D4FE9006381F8 /* CitiesViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModelFactory.swift; sourceTree = "<group>"; };
+		11E7EAC8274D5AF4006381F8 /* CitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCell.swift; sourceTree = "<group>"; };
+		11E7EACA274D6756006381F8 /* ListDayweatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDayweatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		11D1BE9F274C127500BEF0C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11D1BEE2274C8A8B00BEF0C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				11D1BEA4274C127500BEF0C7 /* MusalaSoftiOSTask */,
+				11D1BEE6274C8A8B00BEF0C7 /* MusalaSoftiOSTaskTests */,
 				11D1BEA3274C127500BEF0C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */,
+				11D1BEE5274C8A8B00BEF0C7 /* MusalaSoftiOSTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +131,10 @@
 		11D1BEBD274C139E00BEF0C7 /* ListCities */ = {
 			isa = PBXGroup;
 			children = (
+				11E7EAC5274D4FCE006381F8 /* Factory */,
+				11D1BEF6274C974A00BEF0C7 /* TableViewCell */,
+				11D1BEF5274C966A00BEF0C7 /* ViewModels */,
+				11D1BEF4274C965F00BEF0C7 /* Protocols */,
 				11D1BEBF274C142F00BEF0C7 /* ListCitiesViewController.swift */,
 			);
 			path = ListCities;
@@ -111,6 +151,7 @@
 		11D1BEC3274C154A00BEF0C7 /* ListDayWeather */ = {
 			isa = PBXGroup;
 			children = (
+				11E7EACA274D6756006381F8 /* ListDayweatherViewController.swift */,
 			);
 			path = ListDayWeather;
 			sourceTree = "<group>";
@@ -163,6 +204,80 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		11D1BEE6274C8A8B00BEF0C7 /* MusalaSoftiOSTaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEF1274C8B2900BEF0C7 /* Stubs */,
+				11D1BEF0274C8B1800BEF0C7 /* Extensions */,
+				11D1BEEF274C8AF700BEF0C7 /* Test Case */,
+				11D1BEEE274C8AC700BEF0C7 /* Supporting File */,
+			);
+			path = MusalaSoftiOSTaskTests;
+			sourceTree = "<group>";
+		};
+		11D1BEEE274C8AC700BEF0C7 /* Supporting File */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting File";
+			sourceTree = "<group>";
+		};
+		11D1BEEF274C8AF700BEF0C7 /* Test Case */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEF2274C8B4F00BEF0C7 /* AppDelegateTest.swift */,
+			);
+			path = "Test Case";
+			sourceTree = "<group>";
+		};
+		11D1BEF0274C8B1800BEF0C7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		11D1BEF1274C8B2900BEF0C7 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		11D1BEF4274C965F00BEF0C7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11E7EAC1274D4ECB006381F8 /* CitiesTableViewCellRepresentable.swift */,
+				11E7EAC3274D4F0E006381F8 /* ListCitiesViewRepresentable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		11D1BEF5274C966A00BEF0C7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				11D1BEF7274C977200BEF0C7 /* ListCitiesViewViewModel.swift */,
+				11E7EABF274D4E51006381F8 /* CitiesTableViewCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		11D1BEF6274C974A00BEF0C7 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				11E7EAC8274D5AF4006381F8 /* CitiesTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		11E7EAC5274D4FCE006381F8 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				11E7EAC6274D4FE9006381F8 /* CitiesViewModelFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +298,24 @@
 			productReference = 11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */;
 			productType = "com.apple.product-type.application";
 		};
+		11D1BEE4274C8A8B00BEF0C7 /* MusalaSoftiOSTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11D1BEEB274C8A8B00BEF0C7 /* Build configuration list for PBXNativeTarget "MusalaSoftiOSTaskTests" */;
+			buildPhases = (
+				11D1BEE1274C8A8B00BEF0C7 /* Sources */,
+				11D1BEE2274C8A8B00BEF0C7 /* Frameworks */,
+				11D1BEE3274C8A8B00BEF0C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11D1BEEA274C8A8B00BEF0C7 /* PBXTargetDependency */,
+			);
+			name = MusalaSoftiOSTaskTests;
+			productName = MusalaSoftiOSTaskTests;
+			productReference = 11D1BEE5274C8A8B00BEF0C7 /* MusalaSoftiOSTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,6 +328,11 @@
 				TargetAttributes = {
 					11D1BEA1274C127500BEF0C7 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					11D1BEE4274C8A8B00BEF0C7 = {
+						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
+						TestTargetID = 11D1BEA1274C127500BEF0C7;
 					};
 				};
 			};
@@ -212,6 +350,7 @@
 			projectRoot = "";
 			targets = (
 				11D1BEA1274C127500BEF0C7 /* MusalaSoftiOSTask */,
+				11D1BEE4274C8A8B00BEF0C7 /* MusalaSoftiOSTaskTests */,
 			);
 		};
 /* End PBXProject section */
@@ -227,6 +366,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11D1BEE3274C8A8B00BEF0C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -238,17 +384,40 @@
 				11D1BEDC274C70E500BEF0C7 /* ConsolidatedWeather+CoreDataProperties.swift in Sources */,
 				11D1BEA6274C127500BEF0C7 /* AppDelegate.swift in Sources */,
 				11D1BEC0274C142F00BEF0C7 /* ListCitiesViewController.swift in Sources */,
+				11E7EAC0274D4E51006381F8 /* CitiesTableViewCellViewModel.swift in Sources */,
 				11D1BEC2274C14A300BEF0C7 /* DayWeatherViewController.swift in Sources */,
 				11D1BEDD274C70E500BEF0C7 /* Location+CoreDataClass.swift in Sources */,
 				11D1BEDE274C70E500BEF0C7 /* Location+CoreDataProperties.swift in Sources */,
 				11D1BEE0274C70E500BEF0C7 /* Sources+CoreDataProperties.swift in Sources */,
+				11D1BEF8274C977200BEF0C7 /* ListCitiesViewViewModel.swift in Sources */,
+				11E7EACB274D6756006381F8 /* ListDayweatherViewController.swift in Sources */,
 				11D1BEA8274C127500BEF0C7 /* SceneDelegate.swift in Sources */,
+				11E7EAC9274D5AF4006381F8 /* CitiesTableViewCell.swift in Sources */,
+				11E7EAC2274D4ECB006381F8 /* CitiesTableViewCellRepresentable.swift in Sources */,
+				11E7EAC7274D4FE9006381F8 /* CitiesViewModelFactory.swift in Sources */,
 				11D1BEB0274C127600BEF0C7 /* MusalaSoftiOSTask.xcdatamodeld in Sources */,
+				11E7EAC4274D4F0E006381F8 /* ListCitiesViewRepresentable.swift in Sources */,
 				11D1BEDB274C70E500BEF0C7 /* ConsolidatedWeather+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11D1BEE1274C8A8B00BEF0C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D1BEF3274C8B4F00BEF0C7 /* AppDelegateTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11D1BEEA274C8A8B00BEF0C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11D1BEA1274C127500BEF0C7 /* MusalaSoftiOSTask */;
+			targetProxy = 11D1BEE9274C8A8B00BEF0C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		11D1BEAB274C127500BEF0C7 /* Main.storyboard */ = {
@@ -442,6 +611,55 @@
 			};
 			name = Release;
 		};
+		11D1BEEC274C8A8B00BEF0C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZS8BG3AB6Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kjoe.MusalaSoftiOSTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusalaSoftiOSTask.app/MusalaSoftiOSTask";
+			};
+			name = Debug;
+		};
+		11D1BEED274C8A8B00BEF0C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZS8BG3AB6Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kjoe.MusalaSoftiOSTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusalaSoftiOSTask.app/MusalaSoftiOSTask";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -459,6 +677,15 @@
 			buildConfigurations = (
 				11D1BEBA274C127900BEF0C7 /* Debug */,
 				11D1BEBB274C127900BEF0C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11D1BEEB274C8A8B00BEF0C7 /* Build configuration list for PBXNativeTarget "MusalaSoftiOSTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11D1BEEC274C8A8B00BEF0C7 /* Debug */,
+				11D1BEED274C8A8B00BEF0C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
