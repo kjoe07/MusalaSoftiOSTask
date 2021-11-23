@@ -50,9 +50,6 @@ extension ListCitiesViewController: UITableViewDataSource {
         cell.configure(viewModel: vm)
         return cell
     }
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        (cell as! CitiesTableViewCell).titleLable.text = ""
-    }
 }
 
 extension ListCitiesViewController: UITableViewDelegate {
