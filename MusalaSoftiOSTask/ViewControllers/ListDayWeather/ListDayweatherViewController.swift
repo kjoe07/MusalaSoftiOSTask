@@ -7,16 +7,27 @@
 
 import UIKit
 
-class ListDayweatherViewController: UIViewController {
-    //var viewModel: 
+class ListDayWeatherViewController: UIViewController {
+    var viewModel: ListDayWeatherViewRepresentable!
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = viewModel.title
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        viewModel.dataUpdate = {[weak self] in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.tableView.reloadData()
+            }
+        }
+        viewModel.loadData()
     }
     static var ListDayWeatherSegue: String {
-        return String(describing: ListDayweatherViewController.self)
+        return String(describing: ListDayWeatherViewController.self)
     }
 
     /*
@@ -29,4 +40,19 @@ class ListDayweatherViewController: UIViewController {
     }
     */
 
+}
+extension ListDayWeatherViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfDays
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListDayTableViewCell.identifier) as! ListDayTableViewCell
+        cell.configure(with: viewModel.viewModel(for: indexPath.row))
+        return cell //?? UITableViewCell()
+    }
+}
+
+extension ListDayWeatherViewController: UITableViewDelegate {
+    
 }

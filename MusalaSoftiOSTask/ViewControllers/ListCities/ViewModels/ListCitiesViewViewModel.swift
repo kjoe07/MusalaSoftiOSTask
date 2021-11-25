@@ -16,10 +16,10 @@ class ListCitiesViewViewModel {
     
     var dataUpdated: (() -> Void)?
     
-    private var factory: CitiesViewModelFactory
+    private var factory: ViewModelFactory
     private var manager: CoreDataManager
     
-    init(factory: CitiesViewModelFactory, manager: CoreDataManager) {
+    init(factory: ViewModelFactory, manager: CoreDataManager) {
         self.factory = factory
         self.manager = manager
         readData()
@@ -31,6 +31,10 @@ class ListCitiesViewViewModel {
     
     func viewModel(for index: Int) -> CitiesTableViewCellRepresentable{
         return factory.viewModel(for: cities[index])
+    }
+    
+    func listDayViewModel(for index: Int) -> ListDayViewViewModel {
+        return factory.listDayViewVieModel(manager: manager, location: cities[index])
     }
     
     private func readData() {

@@ -8,11 +8,14 @@
 import UIKit
 
 class DayWeatherViewController: UIViewController {
-
+    
+    var viewModel: DayWeatherViewViewModel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
 
@@ -26,4 +29,19 @@ class DayWeatherViewController: UIViewController {
     }
     */
 
+}
+
+extension DayWeatherViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        return cell ?? UITableViewCell()
+    }
+}
+
+extension DayWeatherViewController: UITableViewDelegate {
+    
 }

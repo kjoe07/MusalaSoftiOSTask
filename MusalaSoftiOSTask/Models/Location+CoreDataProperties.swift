@@ -21,8 +21,8 @@ extension Location {
     @NSManaged public var woeid: NSNumber
     @NSManaged public var lattLong: String?
     @NSManaged public var timeZone: String?
-    @NSManaged public var sources: NSSet?
-    @NSManaged public var consolidateWeather: NSSet?
+    @NSManaged public var sources: Set<Sources>?
+    @NSManaged public var consolidateWeather: Set<ConsolidatedWeather>?
 
 }
 
@@ -63,3 +63,4 @@ extension Location {
 extension Location : Identifiable {
 
 }
+

@@ -12,7 +12,7 @@ class ListCitiesViewViewModelTest: XCTestCase {
     var sut: ListCitiesViewViewModel!
 
     override func setUpWithError() throws {
-       let factory = CitiesViewModelFactory()
+       let factory = ViewModelFactory()
         let manager = CoreDataManager()
         sut = ListCitiesViewViewModel(factory: factory, manager: manager)
     }

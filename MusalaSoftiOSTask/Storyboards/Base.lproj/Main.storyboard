@@ -62,7 +62,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="S2O-cj-p68" id="1Ds-ZX-aqu"/>
-                        <segue destination="Hbd-b8-YOy" kind="show" identifier="dayWeather" id="3YT-Bd-rv6"/>
+                        <segue destination="Hbd-b8-YOy" kind="show" identifier="ListDayWeatherViewController" id="3YT-Bd-rv6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,7 +72,7 @@
         <!--select a day-->
         <scene sceneID="I7r-B6-uNF">
             <objects>
-                <viewController id="Hbd-b8-YOy" sceneMemberID="viewController">
+                <viewController id="Hbd-b8-YOy" customClass="ListDayWeatherViewController" customModule="MusalaSoftiOSTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1QA-qe-tJf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="KwJ-Te-1iN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListDayTableViewCell" id="KwJ-Te-1iN" customClass="ListDayTableViewCell" customModule="MusalaSoftiOSTask" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="70.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KwJ-Te-1iN" id="wId-WM-l2i">
@@ -121,6 +121,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="QAW-wx-ebp" secondAttribute="trailing" constant="20" id="z5d-vj-Hjb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayName" destination="wEI-XN-62E" id="PvI-rE-iJA"/>
+                                            <outlet property="imageICon" destination="QAW-wx-ebp" id="od8-Lq-Fuo"/>
+                                            <outlet property="temp" destination="6un-89-zLg" id="QGB-Mg-shN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -138,6 +143,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="efk-pO-pBy"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="ux6-HT-mVx" id="xQa-8r-CBo"/>
                         <segue destination="ZZK-XC-lO3" kind="show" identifier="weatherInfo" id="nCZ-RT-Bpa"/>
                     </connections>
                 </viewController>

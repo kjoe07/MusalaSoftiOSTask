@@ -31,9 +31,10 @@ class ListCitiesViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ListDayweatherViewController.ListDayWeatherSegue {
-            let vc = segue.destination as! ListDayweatherViewController
-            //TODO: Pass viewModel to nextViewController or location woeid
+        if segue.identifier == ListDayWeatherViewController.ListDayWeatherSegue {
+            let vc = segue.destination as! ListDayWeatherViewController
+            let vm = viewModel.listDayViewModel(for: sender as! Int)
+            vc.viewModel = vm            
         }
     }
 
@@ -54,6 +55,6 @@ extension ListCitiesViewController: UITableViewDataSource {
 
 extension ListCitiesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: ListDayweatherViewController.ListDayWeatherSegue, sender: indexPath.row)
+        self.performSegue(withIdentifier: ListDayWeatherViewController.ListDayWeatherSegue, sender: indexPath.row)
     }
 }
