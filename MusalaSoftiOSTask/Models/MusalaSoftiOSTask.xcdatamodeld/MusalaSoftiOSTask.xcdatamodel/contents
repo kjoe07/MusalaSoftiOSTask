@@ -25,16 +25,27 @@
     <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="lattLong" optional="YES" attributeType="String"/>
         <attribute name="locationType" optional="YES" attributeType="String"/>
+        <attribute name="sunRise" optional="YES" attributeType="String"/>
+        <attribute name="sunSet" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
         <attribute name="timeZone" optional="YES" attributeType="String"/>
+        <attribute name="timeZoneName" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="woeid" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="consolidateWeather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ConsolidatedWeather"/>
+        <relationship name="consolidateWeather" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ConsolidatedWeather"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parent"/>
         <relationship name="sources" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sources"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="woeid"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
+    </entity>
+    <entity name="Parent" representedClassName="Parent" syncable="YES">
+        <attribute name="lattLong" optional="YES" attributeType="String"/>
+        <attribute name="locationType" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="woeid" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Sources" representedClassName="Sources" syncable="YES">
         <attribute name="crawlRate" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -44,7 +55,8 @@
     </entity>
     <elements>
         <element name="ConsolidatedWeather" positionX="-9" positionY="54" width="128" height="254"/>
-        <element name="Location" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Location" positionX="-63" positionY="-18" width="128" height="209"/>
         <element name="Sources" positionX="-36" positionY="45" width="128" height="89"/>
+        <element name="Parent" positionX="-36" positionY="135" width="128" height="89"/>
     </elements>
 </model>

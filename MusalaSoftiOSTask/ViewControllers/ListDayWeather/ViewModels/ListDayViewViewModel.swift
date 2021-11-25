@@ -27,10 +27,11 @@ class ListDayViewViewModel {
             switch result {
             case .success(let values):
                 print(values)
-                let consolidatedWeather = ConsolidateWeatherBuilder.createConsolidateWeather(location: values, manager: self.manager)
                 self.consolidatedWeather = values.consolidatedWeather ?? []
-                self.location.consolidateWeather = consolidatedWeather
-                self.manager.saveObject()
+                if CompositionalRoot.shared.monitor.isNetworkAvailable() {
+                    ConsolidateWeatherBuilder.createReponseWoeidFromNSManagedObject(location: self.location, model: values, manager: self.manager)
+                    self.manager.saveObject()
+                }                
                 self.dataUpdate?()
             case .failure(let error):
                 print(error)

@@ -14,7 +14,7 @@ struct ViewModelFactory {
     func listDayViewVieModel(manager: CoreDataManager, location: Location) -> ListDayViewViewModel {
         let endpoint = LocationEndpoint(path: "/api/location/\(location.woeid)/", queryItems: nil, method: .get)
         let remote = RemoteDataService(loader: NetworkLoader(), endpoint: endpoint)
-        let local = LocalDataService(dbManager: manager)
+        let local = LocalDataService(dbManager: manager, woeid: location.woeid.intValue)
         let service = RemoteLoaderWithLocalFeedBack(remote: remote, local: local, monitor: CompositionalRoot.shared.monitor)
         let vm = ListDayViewViewModel(service: service, location: location, manager: manager)
         return vm

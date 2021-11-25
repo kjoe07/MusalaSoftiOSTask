@@ -26,4 +26,11 @@ struct ParentModel: Codable {
         woeid = try values.decodeIfPresent(Int.self, forKey: .woeid)
         lattLong = try values.decodeIfPresent(String.self, forKey: .lattLong)
     }
+    
+    init(parent: Parent){
+        self.title = parent.title
+        self.woeid = Int(parent.woeid)
+        self.locationType = parent.locationType
+        self.lattLong = parent.lattLong
+    }
 }

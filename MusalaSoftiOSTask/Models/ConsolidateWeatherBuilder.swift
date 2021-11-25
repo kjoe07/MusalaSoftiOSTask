@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import OrderedCollections
 class ConsolidateWeatherBuilder {
     
     
     
-    static func createConsolidateWeather(location: ResponseWoeid, manager: CoreDataManager) -> Set<ConsolidatedWeather> {
-        var model = Set<ConsolidatedWeather>()
+    static func createConsolidateWeather(location: ResponseWoeid, manager: CoreDataManager) -> NSOrderedSet {
+        let model = NSMutableOrderedSet()
         
         for  weather in location.consolidatedWeather ?? [] {
             let consolidate = ConsolidatedWeather(context: manager.persistentContainer.viewContext)
@@ -30,14 +31,47 @@ class ConsolidateWeatherBuilder {
             consolidate.humidity = weather.humidity as NSNumber?
             consolidate.visibility = weather.visibility as NSNumber?
             consolidate.predictability = weather.predictability as NSNumber?
-            model.insert(consolidate)
+            model.add(consolidate)
         }
+        print("model to save:", model.count)
         return model
     }
     
-    static func createReponseWoeidFromNSManagedObject() {
-        
+    static func createReponseWoeidFromNSManagedObject(location: Location, model: ResponseWoeid, manager: CoreDataManager) {
+        let consolidatedWeather = ConsolidateWeatherBuilder.createConsolidateWeather(location: model, manager: manager)
+        manager.deleteAllConsolidatedWeather()
+        location.consolidateWeather = nil
+        location.consolidateWeather = consolidatedWeather
+        print("count:", consolidatedWeather.count)
+        print("Location cons count", location.consolidateWeather?.count ?? 0)
+        if let parent = model.parent {
+            let parent = ConsolidateWeatherBuilder.createParen(parent: parent, manager: manager)
+            location.parent = parent
+        }
+        location.sunRise = model.sunRise
+        location.sunSet = model.sunSet
+        location.timeZoneName = model.timezoneName
+        location.time = model.time
+        location.timeZone = model.timezone
+        location.locationType = model.locationType
+        var sour = Set<Sources>()
+        for sourc in model.sources ?? [] {
+            let source = Sources(context: manager.persistentContainer.viewContext)
+            source.crawlRate = sourc.crawlRate as NSNumber?
+            source.slug = sourc.slug
+            source.tittle = sourc.title
+            source.url = sourc.url
+            sour.insert(source)
+        }
+        location.sources = sour
     }
     
-    
+    static func createParen(parent: ParentModel, manager: CoreDataManager) -> Parent{
+        let coreDataModel = Parent(context: manager.persistentContainer.viewContext)
+        coreDataModel.woeid = Int64(parent.woeid ?? 0)
+        coreDataModel.lattLong = parent.lattLong
+        coreDataModel.locationType = parent.locationType
+        coreDataModel.title = parent.title
+        return coreDataModel
+    }
 }

@@ -58,4 +58,33 @@ struct ConsolidatedWeatherModel: Codable {
         visibility = try values.decodeIfPresent(Double.self, forKey: .visibility)
         predictability = try values.decodeIfPresent(Int.self, forKey: .predictability)
     }
+    
+    init(consolidatedWeather: ConsolidatedWeather) {
+        id = consolidatedWeather.id.intValue
+        weatherStateName = consolidatedWeather.weatherStateName
+        weatherStateAbbr = consolidatedWeather.weatherStateAbbr
+        windDirectionCompass = consolidatedWeather.windDirectionCompass
+        created = consolidatedWeather.created
+        applicableDate = consolidatedWeather.applicableDate
+        minTemp = consolidatedWeather.minTemp?.doubleValue
+        maxTemp = consolidatedWeather.maxTemp?.doubleValue
+        theTemp = consolidatedWeather.temp?.doubleValue
+        windSpeed = consolidatedWeather.windSpeed?.doubleValue
+        windDirection = consolidatedWeather.windDirection?.doubleValue
+        airPressure = consolidatedWeather.airPressure?.doubleValue
+        humidity = consolidatedWeather.airPressure?.doubleValue
+        visibility = consolidatedWeather.visibility?.doubleValue
+        predictability = consolidatedWeather.predictability?.intValue
+    }
 }
+//extension ConsolidatedWeatherModel: Comparable {
+//    static func < (lhs: ConsolidatedWeatherModel, rhs: ConsolidatedWeatherModel) -> Bool {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd"
+//        let date1 = formatter.date(from: lhs.applicableDate ?? "")
+//        let date2 = formatter.date(from: rhs.applicableDate ?? "")
+//        Calendar.current.
+//    }
+//    
+    
+//}

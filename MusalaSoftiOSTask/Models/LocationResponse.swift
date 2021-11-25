@@ -48,4 +48,47 @@ struct ResponseWoeid: Codable {
         lattLong = try values.decodeIfPresent(String.self, forKey: .lattLong)
         timezone = try values.decodeIfPresent(String.self, forKey: .timezone)
     }
+    
+    //TODO: - init from NSManagedObject
+    
+    init(model: Location) {
+        let cons = model.consolidateWeather ?? []
+        print("cons count", cons.count)
+        var consArray = [ConsolidatedWeatherModel]()
+        for con in cons {
+            let consolidateWeatherModel = con as! ConsolidatedWeather
+            print("consolidateWeather:",consolidateWeatherModel)
+            let consolidates = ConsolidatedWeatherModel(consolidatedWeather: consolidateWeatherModel)
+            consArray.append(consolidates)
+        }
+        self.consolidatedWeather = consArray
+//        self.consolidatedWeather = consArray.sorted(by: {
+//            $0.id ?? 0 < $1.id ?? 0
+//        })
+        time = model.time
+        sunRise = model.sunRise
+        sunSet = model.sunSet
+        timezoneName = model.timeZoneName
+       // parent =
+        let sources = model.sources ?? []
+        var sourceArray = [SourcesModel]()
+        for source in sources {
+            let nSource = SourcesModel(source: source)
+            sourceArray.append(nSource)
+        }
+        self.sources =  sourceArray
+        title = model.title
+        locationType = model.locationType
+        woeid = model.woeid.intValue
+        lattLong = model.lattLong
+        timezone = model.timeZone
+        if let paren = model.parent {
+            self.parent = ParentModel(parent: paren)
+        }else {
+            parent = nil
+        }
+        
+    }
 }
+
+

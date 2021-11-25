@@ -16,8 +16,9 @@ class ListDayCellViewModel {
     
     init(weatherData: ConsolidatedWeatherModel) {
         self.weatherData = weatherData
-        formater.unitOptions = .providedUnit
+        //formater.unitOptions = .providedUnit
         formater.unitStyle = .short
+        formater.locale = Calendar.current.locale
     }
     
     var dayName: String {
@@ -50,5 +51,47 @@ class ListDayCellViewModel {
         let url = URL(string: imageURLString)
         return url
     }
+    
+    var windSpeed: String {
+        let speedUnit = Measurement(value: weatherData.windSpeed ?? 0, unit: UnitSpeed.milesPerHour)
+        //formater.unitOptions = .providedUnit
+        formater.numberFormatter.maximumFractionDigits = 2
+        return "Wind: \(formater.string(from: speedUnit))"
+    }
+    
+    var windDirectionCompass: String {
+        return weatherData.windDirectionCompass ?? ""
+    }
+    
+    var windDirection: String {
+        let degrees = Measurement(value: weatherData.windDirection ?? 0, unit: UnitAngle.degrees)
+        formater.numberFormatter.maximumFractionDigits = 3
+        //formater.unitOptions = .providedUnit
+        return formater.string(from: degrees)
+    }
+    var airPresure: String {
+        let mbar = Measurement(value: weatherData.airPressure ?? 0, unit: UnitPressure.millibars)
+        //formater.unitOptions = .providedUnit
+        formater.numberFormatter.maximumFractionDigits = 1
+        return formater.string(from: mbar)
+    }
+    var humidity: String {
+        let humidity = NSNumber(value: weatherData.humidity ?? 0)
+        let percentFormater = NumberFormatter()
+        percentFormater.numberStyle = .percent
+        percentFormater.multiplier = 1
+        percentFormater.maximumFractionDigits = 0
+        percentFormater.minimumFractionDigits = 0
+        return "H: \(percentFormater.string(from: humidity) ?? "") "
+    }
+    
+    var visibility: String {
+        let visibilityMeasure = Measurement(value: weatherData.visibility ?? 0, unit: UnitLength.miles)
+        formater.numberFormatter.maximumFractionDigits = 2
+       // formater.unitOptions = .providedUnit
+        return "V: \(formater.string(from: visibilityMeasure))"
+        
+    }
 }
-extension ListDayCellViewModel: ListDayCellRepresentable { }
+extension ListDayCellViewModel: ListDayCellRepresentable {
+}

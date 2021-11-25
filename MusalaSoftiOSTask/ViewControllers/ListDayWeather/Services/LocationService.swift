@@ -34,18 +34,26 @@ class RemoteDataService:Services{
 }
 class LocalDataService: Services{
     let dbManager: CoreDataManager
+    let woeid: Int
     
-    init(dbManager: CoreDataManager) {
+    init(dbManager: CoreDataManager,woeid: Int) {
         self.dbManager = dbManager
+        self.woeid = woeid
     }
     
     func getData<T: Codable>( completion: @escaping (Result<T, Error>) -> Void) {
         let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
+        //fetchRequest.predicate = NSPredicate(format: "woeid = %@", woeid)
         
         dbManager.persistentContainer.viewContext.perform {
             do {
                 let results = try fetchRequest.execute()
-                completion(.success(results as! T))
+                print("results:", results.first)
+                guard let first = results.first(where: {
+                    $0.woeid.intValue == self.woeid
+                }) else {return}
+                let LocationModel = ResponseWoeid(model: first)
+                completion(.success(LocationModel as! T))
             } catch {
                 print("Unable to Execute Fetch Request, \(error)")
             }

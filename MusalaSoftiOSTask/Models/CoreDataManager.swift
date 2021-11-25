@@ -50,6 +50,15 @@ class CoreDataManager {
             }
         }
     }
+    func deleteAllConsolidatedWeather() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "ConsolidatedWeather")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+           try persistentContainer.persistentStoreCoordinator.execute(deleteRequest, with: persistentContainer.viewContext)
+        }catch {
+            print(error)
+        }        
+    }
     
     func setInitialData() {
         for i in 0..<locations.count {

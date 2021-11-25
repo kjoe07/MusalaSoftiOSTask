@@ -24,4 +24,11 @@ struct SourcesModel: Codable {
         url = try values.decodeIfPresent(String.self, forKey: .url)
         crawlRate = try values.decodeIfPresent(Int.self, forKey: .crawlRate)
     }
+    
+    init(source: Sources) {
+        title = source.tittle
+        slug = source.slug
+        url = source.url
+        crawlRate = source.crawlRate?.intValue
+    }
 }

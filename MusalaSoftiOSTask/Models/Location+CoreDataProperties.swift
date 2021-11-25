@@ -22,7 +22,12 @@ extension Location {
     @NSManaged public var lattLong: String?
     @NSManaged public var timeZone: String?
     @NSManaged public var sources: Set<Sources>?
-    @NSManaged public var consolidateWeather: Set<ConsolidatedWeather>?
+    @NSManaged public var consolidateWeather: NSOrderedSet?
+    @NSManaged public var time: String?
+    @NSManaged public var sunRise: String?
+    @NSManaged public var sunSet: String?
+    @NSManaged public var timeZoneName: String?
+    @NSManaged public var parent: Parent?
 
 }
 

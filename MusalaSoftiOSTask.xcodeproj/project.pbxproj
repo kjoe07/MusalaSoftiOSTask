@@ -37,6 +37,10 @@
 		1190D8FA274F621D00895FC2 /* ListDayWeatherViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1190D8F9274F621D00895FC2 /* ListDayWeatherViewRepresentable.swift */; };
 		1190D8FC274F631E00895FC2 /* ListDayCellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1190D8FB274F631E00895FC2 /* ListDayCellRepresentable.swift */; };
 		1190D8FE274F643800895FC2 /* ListDayCellViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1190D8FD274F643800895FC2 /* ListDayCellViewModelTest.swift */; };
+		11A77A1E274FFD2B000FD559 /* Parent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A77A1C274FFD2B000FD559 /* Parent+CoreDataClass.swift */; };
+		11A77A1F274FFD2B000FD559 /* Parent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A77A1D274FFD2B000FD559 /* Parent+CoreDataProperties.swift */; };
+		11A77A2227500D59000FD559 /* ActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 11A77A2127500D59000FD559 /* ActivityIndicator */; };
+		11A77A2527500D73000FD559 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11A77A2427500D73000FD559 /* Kingfisher */; };
 		11D1BEA6274C127500BEF0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */; };
 		11D1BEA8274C127500BEF0C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */; };
 		11D1BEAD274C127500BEF0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D1BEAB274C127500BEF0C7 /* Main.storyboard */; };
@@ -105,6 +109,8 @@
 		1190D8F9274F621D00895FC2 /* ListDayWeatherViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDayWeatherViewRepresentable.swift; sourceTree = "<group>"; };
 		1190D8FB274F631E00895FC2 /* ListDayCellRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDayCellRepresentable.swift; sourceTree = "<group>"; };
 		1190D8FD274F643800895FC2 /* ListDayCellViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDayCellViewModelTest.swift; sourceTree = "<group>"; };
+		11A77A1C274FFD2B000FD559 /* Parent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		11A77A1D274FFD2B000FD559 /* Parent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusalaSoftiOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A77A2527500D73000FD559 /* Kingfisher in Frameworks */,
+				11A77A2227500D59000FD559 /* ActivityIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +365,8 @@
 		11D1BEC8274C500D00BEF0C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				11A77A1C274FFD2B000FD559 /* Parent+CoreDataClass.swift */,
+				11A77A1D274FFD2B000FD559 /* Parent+CoreDataProperties.swift */,
 				1190D8E7274F411400895FC2 /* ConsolidateWeatherBuilder.swift */,
 				1190D8DD274F357B00895FC2 /* LocationResponse.swift */,
 				11D1BED5274C70E500BEF0C7 /* ConsolidatedWeather+CoreDataClass.swift */,
@@ -473,6 +483,10 @@
 			dependencies = (
 			);
 			name = MusalaSoftiOSTask;
+			packageProductDependencies = (
+				11A77A2127500D59000FD559 /* ActivityIndicator */,
+				11A77A2427500D73000FD559 /* Kingfisher */,
+			);
 			productName = MusalaSoftiOSTask;
 			productReference = 11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */;
 			productType = "com.apple.product-type.application";
@@ -524,6 +538,10 @@
 				Base,
 			);
 			mainGroup = 11D1BE99274C127500BEF0C7;
+			packageReferences = (
+				11A77A2027500D59000FD559 /* XCRemoteSwiftPackageReference "ActivityIndicator" */,
+				11A77A2327500D72000FD559 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 11D1BEA3274C127500BEF0C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -580,6 +598,7 @@
 				11D1BEDD274C70E500BEF0C7 /* Location+CoreDataClass.swift in Sources */,
 				1190D8FC274F631E00895FC2 /* ListDayCellRepresentable.swift in Sources */,
 				11D1BEDE274C70E500BEF0C7 /* Location+CoreDataProperties.swift in Sources */,
+				11A77A1E274FFD2B000FD559 /* Parent+CoreDataClass.swift in Sources */,
 				1103C72D274DD79300A8DAC0 /* DayWeatherCellViewModel.swift in Sources */,
 				1190D8DE274F357B00895FC2 /* LocationResponse.swift in Sources */,
 				1103C72B274DD75400A8DAC0 /* DayWeatherViewViewModel.swift in Sources */,
@@ -603,6 +622,7 @@
 				11E7EAC4274D4F0E006381F8 /* ListCitiesViewRepresentable.swift in Sources */,
 				1103C737274DDCE900A8DAC0 /* EndPoint.swift in Sources */,
 				11D1BEDB274C70E500BEF0C7 /* ConsolidatedWeather+CoreDataClass.swift in Sources */,
+				11A77A1F274FFD2B000FD559 /* Parent+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +923,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		11A77A2027500D59000FD559 /* XCRemoteSwiftPackageReference "ActivityIndicator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kjoe07/ActivityIndicator";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		11A77A2327500D72000FD559 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		11A77A2127500D59000FD559 /* ActivityIndicator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11A77A2027500D59000FD559 /* XCRemoteSwiftPackageReference "ActivityIndicator" */;
+			productName = ActivityIndicator;
+		};
+		11A77A2427500D73000FD559 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 11A77A2327500D72000FD559 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		11D1BEAE274C127500BEF0C7 /* MusalaSoftiOSTask.xcdatamodeld */ = {
