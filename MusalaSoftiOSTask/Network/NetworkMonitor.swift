@@ -13,13 +13,18 @@ class NetworkMonitor {
     var path: NWPath?
     lazy var pathUpdateHandler: ((NWPath) -> Void) = { (path: NWPath) in
         self.path = path
+        var status = false
         if path.status == NWPath.Status.satisfied {
             print("Connected")
+            status = true
         } else if path.status == NWPath.Status.unsatisfied {
             print("unsatisfied")
+            status = false
         } else if path.status == NWPath.Status.requiresConnection {
             print("requiresConnection")
+            status = false
         }
+        NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "networkChanged"), object: status )
     }
     
     let backgroudQueue = DispatchQueue.global(qos: .background)

@@ -73,6 +73,7 @@ class ListDayCellViewModel {
         let mbar = Measurement(value: weatherData.airPressure ?? 0, unit: UnitPressure.millibars)
         //formater.unitOptions = .providedUnit
         formater.numberFormatter.maximumFractionDigits = 1
+        formater.numberFormatter.usesGroupingSeparator = false
         return formater.string(from: mbar)
     }
     var humidity: String {

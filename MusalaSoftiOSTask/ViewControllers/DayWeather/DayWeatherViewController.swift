@@ -12,23 +12,33 @@ class DayWeatherViewController: UIViewController {
     var viewModel: DayWeatherViewViewModel!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var notInternet: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.networkChanged(_:)), name: NSNotification.Name.init(rawValue: "networkChanged"), object: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
-    */
 
+    static var DayWeatherSegue: String {
+        return String(describing: DayWeatherViewController.self)
+    }
+
+    @objc func networkChanged(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            let status = notification.object as! Bool
+            if status {
+                //viewModel.loadData()
+                self.notInternet.isHidden = true
+            }else {
+                self.notInternet.isHidden = false
+            }
+        }
+    }
 }
 
 extension DayWeatherViewController: UITableViewDataSource {

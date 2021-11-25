@@ -11,6 +11,8 @@ class ListCitiesViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var notInternet: UIView!
+    
     var viewModel: ListCitiesViewRepresentable!
 
     override func viewDidLoad() {
@@ -24,6 +26,7 @@ class ListCitiesViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.networkChanged(_:)), name: NSNotification.Name.init(rawValue: "networkChanged"), object: nil)
     }    
 
     
@@ -38,6 +41,18 @@ class ListCitiesViewController: UIViewController {
         }
     }
 
+    @objc func networkChanged(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let status = notification.object as! Bool
+            if status {
+                self.notInternet.isHidden = true
+            }else {
+                self.notInternet.isHidden = false
+            }
+        }
+        
+    }
 
 }
 
