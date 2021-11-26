@@ -33,7 +33,8 @@ extension DayWeatherCellViewModel {
 }
 extension DayWeatherCellViewModel {
     var temp: String {
-        let tempMeasure = Measurement(value: weatherData.theTemp ?? 0, unit: UnitTemperature.celsius)
+        guard let temp = weatherData.theTemp else {return ""}
+        let tempMeasure = Measurement(value: temp, unit: UnitTemperature.celsius)
         formater.numberFormatter.minimumFractionDigits = 0
         formater.numberFormatter.maximumFractionDigits = 0
         return formater.string(from: tempMeasure)

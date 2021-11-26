@@ -23,8 +23,7 @@ class DayWeatherViewViewModel {
     func loadData() {
         service.getData(completion: {[weak self] (result: Result<[ConsolidatedWeatherModel],Error>) in
             guard let self = self else {return}
-            switch result {
-                
+            switch result {                
             case .success(let value):
                 self.weathers = value
                 self.dataUpdated?()

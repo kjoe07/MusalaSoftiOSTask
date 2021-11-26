@@ -13,7 +13,7 @@ class FakeService: Services{
         //let data =  loadStubFromBundle(withName: "woeidResponse", extension: "json")
         
         let bundle = Bundle(for: type(of: self))
-        let url = bundle.url(forResource: "weoidResponse", withExtension: "json")
+        let url = bundle.url(forResource: "day", withExtension: "json")
         let data = try! Data(contentsOf: url!)
         
         let resultData = try! JSONDecoder().decode(T.self, from: data)
