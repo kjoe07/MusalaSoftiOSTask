@@ -29,6 +29,9 @@ class ListDayWeatherViewController: UIViewController {
         self.showActivityIndicator(color: .label)
         viewModel.loadData()
         NotificationCenter.default.addObserver(self, selector: #selector(self.networkChanged(_:)), name: NSNotification.Name.init(rawValue: "networkChanged"), object: nil)
+        if CompositionalRoot.shared.monitor.isNetworkAvailable() == false {
+            notInternet.isHidden = false
+        }
     }
     static var ListDayWeatherSegue: String {
         return String(describing: ListDayWeatherViewController.self)
