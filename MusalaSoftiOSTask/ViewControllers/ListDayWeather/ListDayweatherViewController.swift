@@ -6,11 +6,12 @@
 //
 
 import UIKit
-
+import ActivityIndicator
 class ListDayWeatherViewController: UIViewController {
     var viewModel: ListDayWeatherViewRepresentable!
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var notInternet: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +22,21 @@ class ListDayWeatherViewController: UIViewController {
         viewModel.dataUpdate = {[weak self] in
             DispatchQueue.main.async {
                 guard let self = self else {return}
+                self.hideActivityIndicator()
                 self.tableView.reloadData()
             }
         }
+        self.showActivityIndicator(color: .label)
         viewModel.loadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.networkChanged(_:)), name: NSNotification.Name.init(rawValue: "networkChanged"), object: nil)
     }
     static var ListDayWeatherSegue: String {
         return String(describing: ListDayWeatherViewController.self)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     /*
     // MARK: - Navigation
 
@@ -39,6 +46,19 @@ class ListDayWeatherViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @objc func networkChanged(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            let status = notification.object as! Bool
+            if status {
+                self.viewModel.loadData()
+                self.notInternet.isHidden = true
+            }else {
+                self.self.notInternet.isHidden = false
+            }
+        }
+        
+    }
 
 }
 extension ListDayWeatherViewController: UITableViewDataSource {
