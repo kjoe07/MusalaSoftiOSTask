@@ -26,12 +26,18 @@ class ListDayWeatherViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        viewModel.downloadFailed = { [weak self] error in
+            DispatchQueue.main.async {
+                self?.showAlert(message: error.localizedDescription)
+            }
+        }
         self.showActivityIndicator(color: .label)
-        viewModel.loadData()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.networkChanged(_:)), name: NSNotification.Name.init(rawValue: "networkChanged"), object: nil)
         if CompositionalRoot.shared.monitor.isNetworkAvailable() == false {
             notInternet.isHidden = false
         }
+        viewModel.loadData()
     }
     static var ListDayWeatherSegue: String {
         return String(describing: ListDayWeatherViewController.self)
@@ -40,15 +46,23 @@ class ListDayWeatherViewController: UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    /*
+   
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == DayWeatherViewController.DayWeatherSegue {
+            guard let sender = sender as? Int else {
+                return
+            }
+
+            let vc = segue.destination as! DayWeatherViewController
+            guard let vm = viewModel.dayWeatherViewViewModel(index: sender) else {
+                return
+            }
+            vc.viewModel = vm
+        }
     }
-    */
+    
     @objc func networkChanged(_ notification: Notification) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
@@ -59,8 +73,7 @@ class ListDayWeatherViewController: UIViewController {
             }else {
                 self.self.notInternet.isHidden = false
             }
-        }
-        
+        }        
     }
 
 }
@@ -77,5 +90,7 @@ extension ListDayWeatherViewController: UITableViewDataSource {
 }
 
 extension ListDayWeatherViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: DayWeatherViewController.DayWeatherSegue, sender: indexPath.row)
+    }
 }

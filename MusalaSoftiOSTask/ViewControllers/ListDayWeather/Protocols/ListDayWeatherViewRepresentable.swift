@@ -18,4 +18,6 @@ protocol ListDayWeatherViewRepresentable {
     func viewModel(for index: Int) -> ListDayCellRepresentable
     
     var title: String { get }
+    
+    func dayWeatherViewViewModel(index: Int) -> DayWeatherViewRepresentable?
 }

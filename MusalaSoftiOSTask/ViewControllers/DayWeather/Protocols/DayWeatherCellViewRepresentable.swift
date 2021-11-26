@@ -6,6 +6,10 @@
 //
 
 import Foundation
-protocol DayWeatherCellRepresentable {
-    
+protocol DayWeatherCellRepresentable: ListDayCellRepresentable {
+    var createdDate: String { get }
+    var weatherName: String { get }
+    var temp: String { get }
+    var predictability: String { get }
+    var weatherStateAbb: String { get }
 }

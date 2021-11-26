@@ -29,7 +29,9 @@ class ListCitiesViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.networkChanged(_:)), name: NSNotification.Name.init(rawValue: "networkChanged"), object: nil)
     }    
 
-    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

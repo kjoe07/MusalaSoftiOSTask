@@ -33,7 +33,7 @@ class ListCitiesViewViewModel {
         return factory.viewModel(for: cities[index])
     }
     
-    func listDayViewModel(for index: Int) -> ListDayViewViewModel {
+    func listDayViewModel(for index: Int) -> ListDayWeatherViewRepresentable {
         return factory.listDayViewVieModel(manager: manager, location: cities[index])
     }
     

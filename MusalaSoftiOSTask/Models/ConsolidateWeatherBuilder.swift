@@ -7,8 +7,7 @@
 
 import Foundation
 import OrderedCollections
-class ConsolidateWeatherBuilder {
-    
+class ConsolidateWeatherBuilder {    
     
     
     static func createConsolidateWeather(location: ResponseWoeid, manager: CoreDataManager) -> NSOrderedSet {

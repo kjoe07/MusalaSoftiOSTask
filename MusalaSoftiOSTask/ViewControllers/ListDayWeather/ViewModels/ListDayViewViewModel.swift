@@ -10,15 +10,17 @@ class ListDayViewViewModel {
     let service: Services
     var location: Location!
     let manager: CoreDataManager!
+    let factory: ViewModelFactory
     
     var consolidatedWeather: [ConsolidatedWeatherModel]?
     var dataUpdate: (() -> Void)?
     var downloadFailed: ((Error) -> Void)?
     
-    init(service: Services, location: Location, manager: CoreDataManager) {
+    init(service: Services, location: Location, manager: CoreDataManager, factory: ViewModelFactory) {
         self.service = service
         self.location = location
         self.manager = manager
+        self.factory = factory
     }
     
     func loadData() {
@@ -46,6 +48,13 @@ class ListDayViewViewModel {
     
     func viewModel(for index: Int) -> ListDayCellRepresentable {
         return ListDayCellViewModel(weatherData: consolidatedWeather![index])
+    }
+    
+    func dayWeatherViewViewModel(index: Int) -> DayWeatherViewRepresentable? {
+        guard let date = consolidatedWeather?[index].applicableDate else {return nil}
+        
+        let viewModel = factory.dayWeatherViewViewModel(manager: manager, date: date, woeid: location.woeid.intValue)
+        return viewModel
     }
     
     var title: String {

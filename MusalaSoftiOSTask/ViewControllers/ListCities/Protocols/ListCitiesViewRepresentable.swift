@@ -10,6 +10,6 @@ protocol ListCitiesViewRepresentable {
     var numberOfCities: Int { get }
     func viewModel(for index: Int) -> CitiesTableViewCellRepresentable
     var dataUpdated: (() -> Void)? { get set }
-    func listDayViewModel(for index: Int) -> ListDayViewViewModel
+    func listDayViewModel(for index: Int) -> ListDayWeatherViewRepresentable
     
 }

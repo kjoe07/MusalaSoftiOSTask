@@ -8,7 +8,7 @@
 import UIKit
 
 class DayWeatherTableViewCell: UITableViewCell {
-    @IBOutlet weak var wheatherName:UILabel!
+    @IBOutlet weak var weatherName:UILabel!
     @IBOutlet weak var windSpeed: UILabel!
     @IBOutlet weak var windDirection:UILabel!
     @IBOutlet weak var temp: UILabel!
@@ -19,7 +19,10 @@ class DayWeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var hourIco: UIImageView!
     @IBOutlet weak var dateCreated: UILabel!
    
-
+    static var identifier: String {
+        String(describing: DayWeatherTableViewCell.self)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,7 +35,16 @@ class DayWeatherTableViewCell: UITableViewCell {
     }
     
     func configure(with viewModel: DayWeatherCellRepresentable) {
-        
+        weatherName.text = "\(viewModel.weatherName) \n \n \(viewModel.weatherStateAbb)"
+        windSpeed.text = viewModel.windSpeed.replacingOccurrences(of: "Wind:", with: "")
+        windDirection.text = "\(viewModel.windDirection)  \(viewModel.windDirectionCompass)"
+        temp.text = viewModel.temp
+        airPresure.text = viewModel.airPresure
+        humidity.text = viewModel.humidity.replacingOccurrences(of: "H:", with: "")
+        predictability.text = viewModel.predictability
+        dateCreated.text = viewModel.createdDate
+        hourIco.kf.setImage(with: viewModel.imageURl)
+        visibilty.text = viewModel.visibility.replacingOccurrences(of: "V:", with: "")
     }
 
 }
