@@ -53,11 +53,9 @@ struct ResponseWoeid: Codable {
     
     init(model: Location) {
         let cons = model.consolidateWeather ?? []
-        print("cons count", cons.count)
         var consArray = [ConsolidatedWeatherModel]()
         for con in cons {
             let consolidateWeatherModel = con as! ConsolidatedWeather
-            print("consolidateWeather:",consolidateWeatherModel)
             let consolidates = ConsolidatedWeatherModel(consolidatedWeather: consolidateWeatherModel)
             consArray.append(consolidates)
         }

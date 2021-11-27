@@ -31,17 +31,17 @@ class ConsolidateWeatherBuilder {
             consolidate.predictability = weather.predictability as NSNumber?
             model.add(consolidate)
         }
-        print("model to save:", model.count)
         return model
     }
     
     static func createReponseWoeidFromNSManagedObject(location: Location, model: ResponseWoeid, manager: CoreDataManager) {
         let consolidatedWeather = ConsolidateWeatherBuilder.createConsolidateWeather(location: model, manager: manager)
-        manager.deleteAllConsolidatedWeather()
+        for weather in location.consolidateWeather ?? []{
+            manager.persistentContainer.viewContext.delete(weather as! ConsolidatedWeather)
+        }
+        //manager.deleteAllConsolidatedWeather()
         location.consolidateWeather = nil
         location.consolidateWeather = consolidatedWeather
-        print("count:", consolidatedWeather.count)
-        print("Location cons count", location.consolidateWeather?.count ?? 0)
         if let parent = model.parent {
             let parent = ConsolidateWeatherBuilder.createParen(parent: parent, manager: manager)
             location.parent = parent
