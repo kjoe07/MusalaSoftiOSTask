@@ -119,6 +119,7 @@
 		11A8C81027519EFB006C248E /* EndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTest.swift; sourceTree = "<group>"; };
 		11A8C8122751A2C1006C248E /* ConsolidateWeatherModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolidateWeatherModelTest.swift; sourceTree = "<group>"; };
 		11A8C8142751C2DF006C248E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		11A8C8162751CD12006C248E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusalaSoftiOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +285,7 @@
 				11D1BEC5274C4FA100BEF0C7 /* Storyboards */,
 				11D1BEC4274C4E7C00BEF0C7 /* Application Delegate */,
 				11D1BEBC274C132400BEF0C7 /* ViewControllers */,
+				11A8C8162751CD12006C248E /* Readme.md */,
 			);
 			path = MusalaSoftiOSTask;
 			sourceTree = "<group>";
