@@ -13,7 +13,7 @@ class ListCitiesViewViewModelTest: XCTestCase {
 
     override func setUpWithError() throws {
        let factory = ViewModelFactory()
-        let manager = CoreDataManager()
+        let manager = CompositionalRoot.shared.coreDatamanager()
         sut = ListCitiesViewViewModel(factory: factory, manager: manager)
     }
 

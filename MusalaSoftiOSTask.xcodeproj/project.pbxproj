@@ -42,6 +42,9 @@
 		11A77A2227500D59000FD559 /* ActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 11A77A2127500D59000FD559 /* ActivityIndicator */; };
 		11A77A2527500D73000FD559 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 11A77A2427500D73000FD559 /* Kingfisher */; };
 		11A8C80F27514C27006C248E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C80E27514C27006C248E /* CardView.swift */; };
+		11A8C81127519EFB006C248E /* EndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C81027519EFB006C248E /* EndpointTest.swift */; };
+		11A8C8132751A2C2006C248E /* ConsolidateWeatherModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C8122751A2C1006C248E /* ConsolidateWeatherModelTest.swift */; };
+		11A8C8152751C2DF006C248E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C8142751C2DF006C248E /* CoreDataStack.swift */; };
 		11D1BEA6274C127500BEF0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */; };
 		11D1BEA8274C127500BEF0C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */; };
 		11D1BEAD274C127500BEF0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D1BEAB274C127500BEF0C7 /* Main.storyboard */; };
@@ -113,6 +116,9 @@
 		11A77A1C274FFD2B000FD559 /* Parent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		11A77A1D274FFD2B000FD559 /* Parent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		11A8C80E27514C27006C248E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		11A8C81027519EFB006C248E /* EndpointTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTest.swift; sourceTree = "<group>"; };
+		11A8C8122751A2C1006C248E /* ConsolidateWeatherModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolidateWeatherModelTest.swift; sourceTree = "<group>"; };
+		11A8C8142751C2DF006C248E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusalaSoftiOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -416,6 +422,8 @@
 				1190D8D7274EC5F200895FC2 /* DayWeatherCellViewModelTest.swift */,
 				1190D8ED274F4B4C00895FC2 /* DayWeatherViewViewModelTest.swift */,
 				1190D8FD274F643800895FC2 /* ListDayCellViewModelTest.swift */,
+				11A8C81027519EFB006C248E /* EndpointTest.swift */,
+				11A8C8122751A2C1006C248E /* ConsolidateWeatherModelTest.swift */,
 			);
 			path = "Test Case";
 			sourceTree = "<group>";
@@ -432,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				1190D8EB274F49F500895FC2 /* FakeService.swift */,
+				11A8C8142751C2DF006C248E /* CoreDataStack.swift */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -634,10 +643,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A8C8132751A2C2006C248E /* ConsolidateWeatherModelTest.swift in Sources */,
+				11A8C81127519EFB006C248E /* EndpointTest.swift in Sources */,
 				1190D8EC274F49F500895FC2 /* FakeService.swift in Sources */,
 				1190D8DC274EC91A00895FC2 /* XCTestCase.swift in Sources */,
 				1190D8EE274F4B4C00895FC2 /* DayWeatherViewViewModelTest.swift in Sources */,
 				11D1BEF3274C8B4F00BEF0C7 /* AppDelegateTest.swift in Sources */,
+				11A8C8152751C2DF006C248E /* CoreDataStack.swift in Sources */,
 				1103C71B274D795E00A8DAC0 /* ListCitiesViewViewModelTest.swift in Sources */,
 				1190D8D8274EC5F200895FC2 /* DayWeatherCellViewModelTest.swift in Sources */,
 				11E7EAD1274D726E006381F8 /* SceneDelegateTest.swift in Sources */,

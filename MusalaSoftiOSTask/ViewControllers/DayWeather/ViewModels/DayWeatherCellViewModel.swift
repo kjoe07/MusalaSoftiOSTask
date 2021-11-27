@@ -53,6 +53,7 @@ extension DayWeatherCellViewModel {
 }
 extension DayWeatherCellViewModel {
     var weatherStateAbb: String {
-        return weatherData.weatherStateAbbr ?? ""
+        let abbre =  weatherData.weatherStateAbbr ?? ""
+        return abbre
     }
 }
