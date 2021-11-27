@@ -89,6 +89,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Choose Location" id="LAD-Qe-a14">
                         <barButtonItem key="backBarButtonItem" title=" " id="48K-1B-6G5"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="xi5-yp-EnA">
+                            <connections>
+                                <segue destination="6n8-Eh-wId" kind="show" identifier="AddLocationViewController" id="EnL-UI-jrh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="notInternet" destination="Inf-y8-bq2" id="0f8-Xw-6A9"/>
@@ -99,6 +104,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="113.83928571428571"/>
+        </scene>
+        <!--AddLocation-->
+        <scene sceneID="lTg-rf-nB7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddLocation" id="6n8-Eh-wId" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DQV-VR-9va"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dc3-k3-iUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1615" y="-272"/>
         </scene>
         <!--select a day-->
         <scene sceneID="I7r-B6-uNF">
@@ -569,6 +584,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

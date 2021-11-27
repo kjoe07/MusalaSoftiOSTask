@@ -45,6 +45,9 @@
 		11A8C81127519EFB006C248E /* EndpointTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C81027519EFB006C248E /* EndpointTest.swift */; };
 		11A8C8132751A2C2006C248E /* ConsolidateWeatherModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C8122751A2C1006C248E /* ConsolidateWeatherModelTest.swift */; };
 		11A8C8152751C2DF006C248E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C8142751C2DF006C248E /* CoreDataStack.swift */; };
+		11A8C8182751D2B3006C248E /* AddLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A8C8172751D2B3006C248E /* AddLocation.storyboard */; };
+		11A8C81A2751D33C006C248E /* BorderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C8192751D33C006C248E /* BorderTextField.swift */; };
+		11A8C81D2751D4C3006C248E /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8C81C2751D4C3006C248E /* AddLocationViewController.swift */; };
 		11D1BEA6274C127500BEF0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */; };
 		11D1BEA8274C127500BEF0C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */; };
 		11D1BEAD274C127500BEF0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D1BEAB274C127500BEF0C7 /* Main.storyboard */; };
@@ -120,6 +123,9 @@
 		11A8C8122751A2C1006C248E /* ConsolidateWeatherModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolidateWeatherModelTest.swift; sourceTree = "<group>"; };
 		11A8C8142751C2DF006C248E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		11A8C8162751CD12006C248E /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		11A8C8172751D2B3006C248E /* AddLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddLocation.storyboard; sourceTree = "<group>"; };
+		11A8C8192751D33C006C248E /* BorderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderTextField.swift; sourceTree = "<group>"; };
+		11A8C81C2751D4C3006C248E /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		11D1BEA2274C127500BEF0C7 /* MusalaSoftiOSTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusalaSoftiOSTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D1BEA5274C127500BEF0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D1BEA7274C127500BEF0C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +263,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		11A8C81B2751D4B0006C248E /* AddLocation */ = {
+			isa = PBXGroup;
+			children = (
+				11A8C81C2751D4C3006C248E /* AddLocationViewController.swift */,
+			);
+			path = AddLocation;
+			sourceTree = "<group>";
+		};
 		11D1BE99274C127500BEF0C7 = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +307,7 @@
 		11D1BEBC274C132400BEF0C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				11A8C81B2751D4B0006C248E /* AddLocation */,
 				11D1BEC3274C154A00BEF0C7 /* ListDayWeather */,
 				11D1BEBE274C13BC00BEF0C7 /* DayWeather */,
 				11D1BEBD274C139E00BEF0C7 /* ListCities */,
@@ -352,6 +367,7 @@
 			children = (
 				11D1BEAB274C127500BEF0C7 /* Main.storyboard */,
 				11D1BEB3274C127900BEF0C7 /* LaunchScreen.storyboard */,
+				11A8C8172751D2B3006C248E /* AddLocation.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -361,6 +377,7 @@
 			children = (
 				11D1BEB6274C127900BEF0C7 /* Info.plist */,
 				11A8C80E27514C27006C248E /* CardView.swift */,
+				11A8C8192751D33C006C248E /* BorderTextField.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -574,6 +591,7 @@
 				11D1BEB5274C127900BEF0C7 /* LaunchScreen.storyboard in Resources */,
 				11D1BEB2274C127900BEF0C7 /* Assets.xcassets in Resources */,
 				11D1BEAD274C127500BEF0C7 /* Main.storyboard in Resources */,
+				11A8C8182751D2B3006C248E /* AddLocation.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +613,7 @@
 			files = (
 				1103C72F274DD7B200A8DAC0 /* DayWeatherTableViewCell.swift in Sources */,
 				11D1BEDF274C70E500BEF0C7 /* Sources+CoreDataClass.swift in Sources */,
+				11A8C81D2751D4C3006C248E /* AddLocationViewController.swift in Sources */,
 				1190D8E6274F368400895FC2 /* SourcesModel.swift in Sources */,
 				11D1BEDC274C70E500BEF0C7 /* ConsolidatedWeather+CoreDataProperties.swift in Sources */,
 				11D1BEA6274C127500BEF0C7 /* AppDelegate.swift in Sources */,
@@ -630,6 +649,7 @@
 				11E7EAC9274D5AF4006381F8 /* CitiesTableViewCell.swift in Sources */,
 				11E7EAC2274D4ECB006381F8 /* CitiesTableViewCellRepresentable.swift in Sources */,
 				1103C729274DD73700A8DAC0 /* DayWeatherCellViewRepresentable.swift in Sources */,
+				11A8C81A2751D33C006C248E /* BorderTextField.swift in Sources */,
 				1103C731274DD7D000A8DAC0 /* DayWeatherCellViewModelFactory.swift in Sources */,
 				1103C73F274DE5D600A8DAC0 /* LocationService.swift in Sources */,
 				11E7EAC7274D4FE9006381F8 /* CitiesViewModelFactory.swift in Sources */,

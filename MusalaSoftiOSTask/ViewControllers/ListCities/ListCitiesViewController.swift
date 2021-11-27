@@ -40,6 +40,9 @@ class ListCitiesViewController: UIViewController {
             let vc = segue.destination as! ListDayWeatherViewController
             let vm = viewModel.listDayViewModel(for: sender as! Int)
             vc.viewModel = vm            
+        }else if segue.identifier == AddLocationViewController.segueIdentifier {
+            let vc = segue.destination as! AddLocationViewController
+            vc.manager = (viewModel as! ListCitiesViewViewModel).manager            
         }
     }
 

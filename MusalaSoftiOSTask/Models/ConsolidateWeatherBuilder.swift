@@ -72,4 +72,13 @@ class ConsolidateWeatherBuilder {
         coreDataModel.title = parent.title
         return coreDataModel
     }
+    static func createLocationFromResponseWoeidModel(model: ResponseWoeid, manager: CoreDataManager) {
+        let location = Location(context: manager.persistentContainer.viewContext)
+        location.consolidateWeather = nil
+        location.title = model.title
+        location.locationType = model.locationType
+        location.woeid = (model.woeid ?? 0) as NSNumber
+        location.lattLong = model.lattLong
+        manager.saveObject()
+    }
 }

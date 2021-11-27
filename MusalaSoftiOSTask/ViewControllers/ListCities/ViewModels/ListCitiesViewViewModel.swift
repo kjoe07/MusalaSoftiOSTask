@@ -17,12 +17,15 @@ class ListCitiesViewViewModel {
     var dataUpdated: (() -> Void)?
     
     private var factory: ViewModelFactory
-    private var manager: CoreDataManager
+    var manager: CoreDataManager
     
     init(factory: ViewModelFactory, manager: CoreDataManager) {
         self.factory = factory
         self.manager = manager
         readData()
+        NotificationCenter.default.addObserver(forName: .NSManagedObjectContextDidSave, object: manager.persistentContainer.viewContext, queue: .main) { [weak self] _ in
+            self?.readData()
+        }
     }
     
     var numberOfCities: Int {
